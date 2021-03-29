@@ -66,7 +66,6 @@ class Home extends PureComponent {
         dir={this.state.dir}
         className={('IndexWrapper', this.state.mode, this.props.mode)}
       >
-        <Loading></Loading>
         <Nav dir={this.directionPage} mode={this.modePage}></Nav>
         <Header margin={this.state.marginNav}></Header>
         <World></World>

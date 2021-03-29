@@ -111,7 +111,9 @@ class Nav extends PureComponent {
             this.props.dir('ltr')
 
         }
-        i18n.changeLanguage(lang)
+        i18n.changeLanguage(lang);
+        this.props.i18n.changeLanguage(lang);
+        i18next.changeLanguage(lang);
         document.title = i18next.t('home');
     }
     return (

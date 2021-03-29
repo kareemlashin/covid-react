@@ -14,11 +14,12 @@ import {Provider} from 'react-redux'
 import store from './core/store/store.js'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Loading from './component/Loading/Loading';
 
 function App() {
   return (
     <Provider store={store} >
-    <Suspense fallback={<></>}>
+    <Suspense fallback={<Loading></Loading>}>
 
     <ToastContainer />
 
