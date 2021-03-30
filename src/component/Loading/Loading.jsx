@@ -9,14 +9,14 @@ class Loading extends PureComponent {
   render () {
     return (
       <div className='LoadingWrapper'>
-        {this.props.loadingPage ?
+        {this.props.loadingPage ?(
 
           <div className='loading'>
           <div id='container'>
             <div id='loader'></div>
           </div>
 
-        </div> : ''}
+        </div>) : ''}
 
       </div>
     )

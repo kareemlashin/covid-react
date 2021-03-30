@@ -19,8 +19,8 @@ import Loading from './component/Loading/Loading';
 function App() {
   return (
     <Provider store={store} >
-    <Suspense fallback={<Loading></Loading>}>
-
+    <Suspense fallback={<></>}>
+<Loading />
     <ToastContainer />
 
       <Router >

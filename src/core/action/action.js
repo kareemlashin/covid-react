@@ -45,22 +45,18 @@ export const getTable = () => {
                     table: res.data
                 })
 
-                setTimeout(() => {
 
                     dispatch({
                         type: 'loadingPage',
                         loadingPage: false
                     })
-                }, 1500);
 
 
             }).catch(err => {
-                setTimeout(() => {
                     dispatch({
                         type: 'loadingPage',
                         loadingPage: false
                     })
-                }, 1500);
 
             })
     }
@@ -78,22 +74,18 @@ export const getWorld = () => {
                     type: 'world',
                     world: res.data
                 })
-                setTimeout(() => {
 
                     dispatch({
                         type: 'loadingPage',
                         loadingPage: false
                     })
-                }, 1500);
 
 
             }).catch(err => {
-                setTimeout(() => {
                     dispatch({
                         type: 'loadingPage',
                         loadingPage: false
                     })
-                }, 1500);
 
             })
     }
@@ -111,20 +103,16 @@ export const getEgypt = () => {
                     egypt: res.data[0]
                 })
 
-                setTimeout(() => {
                     dispatch({
                         type: 'loadingPage',
                         loadingPage: false
                     })
-                }, 1500);
 
             }).catch(err => {
-                setTimeout(() => {
                     dispatch({
                         type: 'loadingPage',
                         loadingPage: false
                     })
-                }, 1500);
 
             })
     }
