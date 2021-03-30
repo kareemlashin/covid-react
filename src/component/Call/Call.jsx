@@ -13,7 +13,9 @@ class Call extends PureComponent {
    const {t}=this.props;
     return (
       <div className="CallWrapper">
-        <div className="container call mb-3">
+        <div className="container  mb-3">
+        <div className="call  ">
+        
           <div className="row">
             <div className="col-md-9">
           <div className="row">
@@ -39,6 +41,7 @@ class Call extends PureComponent {
               </button>
             </div>
           </div>
+        </div>
         </div>
       </div>
     );
