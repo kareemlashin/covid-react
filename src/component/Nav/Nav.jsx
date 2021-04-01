@@ -83,6 +83,11 @@ class Nav extends PureComponent {
     
     const {t, i18n} = this.props
     const change = (lang) => {
+        
+        i18n.changeLanguage(lang);
+        this.props.i18n.changeLanguage(lang);
+        i18next.changeLanguage(lang);
+        document.title = i18next.t('home');
         if (lang == 'ar') {
             localStorage.setItem('dir', 'rtl')
 
@@ -111,10 +116,6 @@ class Nav extends PureComponent {
             this.props.dir('ltr')
 
         }
-        i18n.changeLanguage(lang);
-        this.props.i18n.changeLanguage(lang);
-        i18next.changeLanguage(lang);
-        document.title = i18next.t('home');
     }
     return (
       <div className="NavWrapper">
@@ -128,12 +129,14 @@ class Nav extends PureComponent {
                     <div className={
                         ('position-relative d-flex ', this.state.dir == 'ltr' ? 'ml-auto' : 'mr-auto')
                     }>
-                        <div className="d-inline-block">
+                        <div className="position-relative d-inline-block">
                             <div> {
-                                i18n.language === 'en' ? <button className="lang-btn rounded-pill "
+                                i18n.language === 'en' ? 
+                                <button className="lang-btn rounded-pill  h-100"
                                     onClick={
                                         () => change('ar')
-                                }>العربيه</button> : <button className="lang-btn rounded-pill "
+                                }>العربيه</button> : 
+                                <button className="lang-btn rounded-pill  h-100"
                                     onClick={
                                         () => change('en')
                                 }>English</button>
