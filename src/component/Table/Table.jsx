@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import ReactCountryFlag from 'react-country-flag'
 import { withTranslation } from 'react-i18next'
+// 
+import { getTable } from '../../core/action/action'
 
 class Table extends PureComponent {
   constructor(props) {
@@ -40,7 +42,7 @@ class Table extends PureComponent {
         {(() => {
           if (
             this.props.table.filter((x) => {
-              return x.countryRegion
+              return x.country
                 .toLowerCase()
                 .includes(this.state.val.toLowerCase())
             }).length != 0
@@ -72,7 +74,7 @@ class Table extends PureComponent {
                         <tbody>
                           {this.props.table
                             .filter((x) => {
-                              return x.countryRegion
+                              return x.country
                                 .toLowerCase()
                                 .includes(this.state.val.toLowerCase())
                             })
@@ -81,13 +83,13 @@ class Table extends PureComponent {
                               <tr>
                                 <td>
                                   <ReactCountryFlag
-                                    countryCode={item.iso2}
+                                    countryCode={item.countryInfo.iso2}
                                     svg
                                   />
                                 </td>
-                                <td>{item.countryRegion}</td>
+                                <td>{item.country}</td>
                                 <td>{item.deaths}</td>
-                                <td>{item.confirmed}</td>
+                                <td>{item.cases}</td>
                                 <td>{item.recovered}</td>
                                 <td>{item.active}</td>
                               </tr>
@@ -127,7 +129,11 @@ const mapStateToProps = (state) => ({
   table: state.reducers.table,
 })
 
-const mapDispatchToProps = (dispatch) => ({})
+const mapDispatchToProps = (dispatch) => ({
+  allWorldData: () => {
+    dispatch(getTable())
+  },
+})
 
 export default connect(
   mapStateToProps,

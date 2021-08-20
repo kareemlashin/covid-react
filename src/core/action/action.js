@@ -37,7 +37,7 @@ export const getTable = () => {
     return (dispatch) => {
 
         axios
-            .get(`https://covid19.mathdro.id/api/recovered`)
+            .get(`https://disease.sh/v3/covid-19/countries`)
 
             .then(res => {
                 dispatch({
